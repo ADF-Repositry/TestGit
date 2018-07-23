@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.1.10" id="ResourceRegistry"
+             SeparateXMLFiles="false" Package="adf.hr.model" ClientType="Generic">
+  <pageMap>
+    <page path="v1_Employees1" usageId="v1_AppModuleAM_EmployeesVOResources"/>
+    <page path="v1_Departments1" usageId="v1_AppModuleAM_DepartmentsVOResources"/>
+  </pageMap>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleAMDataControl" Package="adf.hr.model.bc.am"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+  <pageDefinitionUsages>
+    <page id="v1_AppModuleAM_EmployeesVOResources" path="adf.hr.model.bc.am.rest.v1.AppModuleAM_EmployeesVOResources"/>
+    <page id="v1_AppModuleAM_DepartmentsVOResources"
+          path="adf.hr.model.bc.am.rest.v1.AppModuleAM_DepartmentsVOResources"/>
+  </pageDefinitionUsages>
+</Application>

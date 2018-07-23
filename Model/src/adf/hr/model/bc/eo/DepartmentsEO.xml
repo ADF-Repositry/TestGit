@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DepartmentsEO"
+  Version="12.2.1.1.10"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="DEPARTMENTS"
+  AliasName="DepartmentsEO"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="DepartmentId"
+    IsNotNull="true"
+    Precision="4"
+    Scale="0"
+    ColumnName="DEPARTMENT_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DEPARTMENTS"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="DepartmentName"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="DEPARTMENT_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DEPARTMENTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ManagerId"
+    Precision="6"
+    Scale="0"
+    ColumnName="MANAGER_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DEPARTMENTS"/>
+  <Attribute
+    Name="LocationId"
+    ColumnName="LOCATION_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DEPARTMENTS"/>
+  <Attribute
+    Name="DeptDetails"
+    Precision="100"
+    ColumnName="DEPT_DETAILS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DEPARTMENTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="IsDeleted"
+    Precision="1"
+    ColumnName="IS_DELETED"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DEPARTMENTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastEmpAction"
+    Precision="100"
+    ColumnName="LAST_EMP_ACTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DEPARTMENTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Employees"
+    Association="adf.hr.model.bc.assoc.EmpDeptFkAssoc"
+    AssociationEnd="adf.hr.model.bc.assoc.EmpDeptFkAssoc.Employees"
+    AssociationOtherEnd="adf.hr.model.bc.assoc.EmpDeptFkAssoc.Departments"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Employees1"
+    Association="adf.hr.model.bc.assoc.DeptMgrFkAssoc"
+    AssociationEnd="adf.hr.model.bc.assoc.DeptMgrFkAssoc.Employees1"
+    AssociationOtherEnd="adf.hr.model.bc.assoc.DeptMgrFkAssoc.Departments1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="DeptIdPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="DEPT_ID_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="adf.hr.model.bc.eo.DepartmentsEO.DepartmentId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="DeptNameNn">
+    <DesignTime>
+      <Attr Name="_checkCondition" Value='"DEPARTMENT_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="DEPT_NAME_NN"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="DeptLocFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="LOC_ID_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="DEPT_LOC_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="adf.hr.model.bc.eo.DepartmentsEO.LocationId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="DeptMgrFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="EMP_EMP_ID_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="DEPT_MGR_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="adf.hr.model.bc.eo.DepartmentsEO.ManagerId"/>
+    </AttrArray>
+  </Key>
+</Entity>

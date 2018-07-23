@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.1.10"
+                id="AppModuleAM_EmployeesVOResources" Package="adf.hr.model.bc.am.rest.v1" usageMode="RESTClient">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Employees1" RangeSize="5" DataControl="AppModuleAMDataControl" id="Employees1Iter"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="Employees1Iter" id="Employees1" AccessorFolder="Always">
+      <nodeDefinition DefName="adf.hr.model.bc.vo.EmployeesVO" Name="adf.hr.model.bc.vo.EmployeesVO"
+                      DiscrName="_Sys_Accessor" HintsSuffix="empShaping">
+        <Accessors>
+          <Item Value="Employees"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="adf.hr.model.bc.vo.EmployeesVO" Name="adf.hr.model.bc.vo.EmployeesVO"
+                      DiscrName="_Sys_Accessor" DiscrValue="Employees" HintsSuffix="empShaping"/>
+    </tree>
+    <methodAction id="calculateEmployees" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="calculateEmployees" IsViewObjectMethod="true" DataControl="AppModuleAMDataControl"
+                  InstanceName="data.AppModuleAMDataControl.Employees1"
+                  ReturnName="data.AppModuleAMDataControl.methodResults.calculateEmployees_AppModuleAMDataControl_Employees1_calculateEmployees_result"
+                  IterBinding="Employees1Iter">
+      <NamedData NDName="firstName" NDType="java.lang.String"/>
+      <NamedData NDName="lastName" NDType="java.lang.String"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

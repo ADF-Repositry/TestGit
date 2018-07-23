@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE PDefViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<PDefViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmployeesVO_empShaping"
+  Version="12.2.1.1.10"
+  StaticDef="adf.hr.model.bc.vo.EmployeesVO">
+  <PDefAttribute
+    Name="DepartmentId">
+    <Properties>
+      <SchemaBasedProperties>
+        <PAYLOADHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </PDefAttribute>
+  <PDefAttribute
+    Name="Gender">
+    <Properties>
+      <SchemaBasedProperties>
+        <PAYLOADHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </PDefAttribute>
+  <PDefAttribute
+    Name="IsDeleted">
+    <Properties>
+      <SchemaBasedProperties>
+        <PAYLOADHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </PDefAttribute>
+  <PDefAttribute
+    Name="CommissionPct">
+    <Properties>
+      <SchemaBasedProperties>
+        <PAYLOADHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </PDefAttribute>
+</PDefViewObject>
